@@ -1,8 +1,24 @@
-apply plugin: 'java'
+
+allprojects {
+    apply plugin: 'java'
+    sourceSets { test { output.resourcesDir = output.classesDir } }
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    testCompile 'uk.co.sentinelweb:json-annotation:1.0.2'
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+
+repositories {
+    jcenter()
+    // todo still need this - hw to publish to main jcenter repo
+    maven {
+        url 'https://dl.bintray.com/sentinelweb/generic/'
+    }
+}
+
+
