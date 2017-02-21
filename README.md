@@ -20,3 +20,8 @@ repositories {
     }
 }
 ```
+You may also have to add 
+```
+sourceSets { test { output.resourcesDir = output.classesDir } }
+```
+to get the recources to output to your class directory
