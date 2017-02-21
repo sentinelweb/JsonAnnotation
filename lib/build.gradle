@@ -23,7 +23,6 @@ publishing {
             groupId 'uk.co.sentinelweb'
             artifactId 'json-annotation'
             version '1.0.2'
-
             //artifact sourcesJar
         }
     }
@@ -42,11 +41,23 @@ bintray {
         version {
             name = '1.0.2'
             desc = 'Json Resource Annotation 1.0.1 final'
-            vcsTag = '1.0'
-            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+            vcsTag = '1.0.2'
+            attributes = ['gradle-plugin': 'uk.co.sentinleweb:json-annotation:1.0.2']
         }
     }
 }
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+
+// USAGE
+// testCompile 'uk.co.sentinelweb:json-annotation:1.0.2'
+// TODO
+// todo still need toadd repo - how to publish to main jcenter repo?
+//repositories {
+//    jcenter()
+//    maven {
+//        url 'https://dl.bintray.com/sentinelweb/generic/'
+//    }
+//}
+
