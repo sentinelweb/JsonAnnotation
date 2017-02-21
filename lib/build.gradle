@@ -1,0 +1,52 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    // https://mvnrepository.com/artifact/junit/junit
+    compile 'junit:junit:4.12'
+
+}
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+group = 'json-annotation'
+version = '1.0.2'
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            groupId 'uk.co.sentinelweb'
+            artifactId 'json-annotation'
+            version '1.0.2'
+
+            //artifact sourcesJar
+        }
+    }
+}
+
+bintray {
+    user = SW_JCENTER_USER
+    key = SW_JCENTER_API_KEY
+    publications = ['MyPublication']
+    pkg {
+        repo = 'generic'
+        name = 'json-annotation'
+        userOrg = 'sentinelweb'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/sentinelweb/JsonAnnotation'
+        version {
+            name = '1.0.2'
+            desc = 'Json Resource Annotation 1.0.1 final'
+            vcsTag = '1.0'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
