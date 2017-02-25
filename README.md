@@ -25,3 +25,5 @@ You may also have to add
 sourceSets { test { output.resourcesDir = output.classesDir } }
 ```
 to get the recources to output to your class directory
+
+ [ ![Download](https://api.bintray.com/packages/sentinelweb/generic/json-annotation/images/download.svg) ](https://bintray.com/sentinelweb/generic/json-annotation/_latestVersion)
