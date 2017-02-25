@@ -1,4 +1,6 @@
 apply plugin: 'java'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -10,8 +12,6 @@ dependencies {
     compile 'junit:junit:4.12'
 
 }
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'maven-publish'
 
 group = 'json-annotation'
 version = '1.0.2'
@@ -42,7 +42,7 @@ bintray {
             name = '1.0.2'
             desc = 'Json Resource Annotation 1.0.1 final'
             vcsTag = '1.0.2'
-            attributes = ['gradle-plugin': 'uk.co.sentinleweb:json-annotation:1.0.2']
+            attributes = ['gradle-plugin': 'uk.co.sentinelweb:json-annotation:1.0.2']
         }
     }
 }
